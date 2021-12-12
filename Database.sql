@@ -154,4 +154,15 @@ insert into TinTuc (TenTin,MaTK,NgayDang,NoiDung) values
 (N'9 kỹ thuật làm đẹp cho u30',1,'2/3/2020','This is a content')
 
 
+--insert into HoaDon(MaTK,HoTenNguoiNhan,SDTNguoiNhan,DiaChiNhan,EmailNguoiNhan,NgayLap,TongTien,TrangThai,GhiChu) values
+--(1,N'Lan Anh',N'098764567',N'Hà Nội',N'lananh@gmail.com',CAST(N'2021-08-07T20:45:45.887' AS DateTime),200000,N'1',N'Giao sớm'),
+--(1,N'Lan Anh',N'098764567',N'Hà Nội',N'lananh@gmail.com',CAST(N'2021-08-07T20:45:45.887' AS DateTime),200000,N'0',N'Giao sớm')
 
+--insert into AnhMoTa values
+--(N'/images/2.jpg',N'SP001')
+--insert into ChiTietSanPham values
+--(1,1)
+
+
+--INSERT into ChiTietHoaDon values
+--(1,1,1,2)
