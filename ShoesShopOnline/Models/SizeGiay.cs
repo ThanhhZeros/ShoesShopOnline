@@ -16,8 +16,7 @@ namespace ShoesShopOnline.Models
         }
 
         [Key]
-        [StringLength(10)]
-        public string KichCo { get; set; }
+        public int KichCo { get; set; }
 
         [StringLength(20)]
         public string Loai { get; set; }

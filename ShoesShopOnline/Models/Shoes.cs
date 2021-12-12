@@ -13,13 +13,10 @@ namespace ShoesShopOnline.Models
         }
 
         public virtual DbSet<AnhMoTa> AnhMoTas { get; set; }
-        public virtual DbSet<ChiTietAnh> ChiTietAnhs { get; set; }
         public virtual DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
         public virtual DbSet<ChiTietSanPham> ChiTietSanPhams { get; set; }
         public virtual DbSet<DanhMucSP> DanhMucSPs { get; set; }
         public virtual DbSet<HoaDon> HoaDons { get; set; }
-        public virtual DbSet<KhuyenMai> KhuyenMais { get; set; }
-        public virtual DbSet<LienHe> LienHes { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<SizeGiay> SizeGiays { get; set; }
         public virtual DbSet<TaiKhoanNguoiDung> TaiKhoanNguoiDungs { get; set; }
@@ -29,41 +26,8 @@ namespace ShoesShopOnline.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AnhMoTa>()
-                .Property(e => e.MaAnh)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<AnhMoTa>()
                 .Property(e => e.MaSP)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<AnhMoTa>()
-                .HasMany(e => e.ChiTietAnhs)
-                .WithOptional(e => e.AnhMoTa)
-                .WillCascadeOnDelete();
-
-            modelBuilder.Entity<ChiTietAnh>()
-                .Property(e => e.MaAnh)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ChiTietHoaDon>()
-                .Property(e => e.MaAnh)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ChiTietHoaDon>()
-                .Property(e => e.KichCo)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ChiTietSanPham>()
-                .Property(e => e.MaAnh)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ChiTietSanPham>()
-                .Property(e => e.KichCo)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ChiTietSanPham>()
-                .Property(e => e.GiaBan)
-                .HasPrecision(19, 4);
 
             modelBuilder.Entity<ChiTietSanPham>()
                 .HasMany(e => e.ChiTietHoaDons)
@@ -86,23 +50,6 @@ namespace ShoesShopOnline.Models
                 .Property(e => e.TongTien)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<KhuyenMai>()
-                .Property(e => e.MaKhuyenMai)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<KhuyenMai>()
-                .HasMany(e => e.SanPhams)
-                .WithOptional(e => e.KhuyenMai)
-                .WillCascadeOnDelete();
-
-            modelBuilder.Entity<LienHe>()
-                .Property(e => e.SDTLienHe)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<LienHe>()
-                .Property(e => e.Email)
-                .IsUnicode(false);
-
             modelBuilder.Entity<SanPham>()
                 .Property(e => e.MaSP)
                 .IsUnicode(false);
@@ -112,17 +59,13 @@ namespace ShoesShopOnline.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<SanPham>()
-                .Property(e => e.MaKhuyenMai)
-                .IsUnicode(false);
+                .Property(e => e.GiaBan)
+                .HasPrecision(19, 4);
 
             modelBuilder.Entity<SanPham>()
                 .HasMany(e => e.AnhMoTas)
                 .WithOptional(e => e.SanPham)
                 .WillCascadeOnDelete();
-
-            modelBuilder.Entity<SizeGiay>()
-                .Property(e => e.KichCo)
-                .IsUnicode(false);
 
             modelBuilder.Entity<TaiKhoanNguoiDung>()
                 .Property(e => e.SDT)
