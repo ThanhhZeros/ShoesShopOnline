@@ -432,8 +432,6 @@
     <Compile Include="Areas\Admin\Controllers\DanhMucSPsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HoaDonsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Admin\Controllers\KhuyenMaisController.cs" />
-    <Compile Include="Areas\Admin\Controllers\LienHesController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\TaiKhoanNguoiDungsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TaiKhoanQuanTrisController.cs" />
@@ -445,13 +443,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AnhMoTa.cs" />
-    <Compile Include="Models\ChiTietAnh.cs" />
     <Compile Include="Models\ChiTietHoaDon.cs" />
     <Compile Include="Models\ChiTietSanPham.cs" />
     <Compile Include="Models\DanhMucSP.cs" />
     <Compile Include="Models\HoaDon.cs" />
-    <Compile Include="Models\KhuyenMai.cs" />
-    <Compile Include="Models\LienHe.cs" />
     <Compile Include="Models\SanPham.cs" />
     <Compile Include="Models\Shoes.cs" />
     <Compile Include="Models\SizeGiay.cs" />
@@ -471,16 +466,6 @@
     <Content Include="Areas\Admin\Views\DanhMucSPs\Details.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMucSPs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMucSPs\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\KhuyenMais\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\KhuyenMais\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\KhuyenMais\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\KhuyenMais\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\KhuyenMais\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\LienHes\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\LienHes\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\LienHes\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\LienHes\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\LienHes\Index.cshtml" />
     <Content Include="Areas\Admin\Views\TinTucs\Create.cshtml" />
     <Content Include="Areas\Admin\Views\TinTucs\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\TinTucs\Details.cshtml" />
