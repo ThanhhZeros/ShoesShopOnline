@@ -61,7 +61,9 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ComponentModel.DataAnnotations.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -102,6 +104,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Assets\CSS\UploadImage.css" />
+    <Content Include="Areas\Admin\Assets\JS\UploadImages.js" />
     <Content Include="Assets\Admin\assets\extra-libs\sparkline\sparkline.js" />
     <Content Include="Assets\Admin\assets\images\custom-select.png" />
     <Content Include="Assets\Admin\assets\images\favicon.png" />
@@ -428,16 +432,14 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\ChiTietSanPhamsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AnhMoTasController.cs" />
     <Compile Include="Areas\Admin\Controllers\DanhMucSPsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HoaDonsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Admin\Controllers\KhuyenMaisController.cs" />
-    <Compile Include="Areas\Admin\Controllers\LienHesController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SanPhamsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TaiKhoanNguoiDungsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TaiKhoanQuanTrisController.cs" />
-    <Compile Include="Areas\Admin\Controllers\TinTucsController.cs" />
     <Compile Include="Areas\Admin\Data\LoginAccount.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -445,16 +447,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AnhMoTa.cs" />
-    <Compile Include="Models\ChiTietAnh.cs" />
     <Compile Include="Models\ChiTietHoaDon.cs" />
     <Compile Include="Models\ChiTietSanPham.cs" />
     <Compile Include="Models\DanhMucSP.cs" />
     <Compile Include="Models\HoaDon.cs" />
-    <Compile Include="Models\KhuyenMai.cs" />
-    <Compile Include="Models\LienHe.cs" />
+    <Compile Include="Models\ProductDetail.cs" />
     <Compile Include="Models\SanPham.cs" />
     <Compile Include="Models\Shoes.cs" />
-    <Compile Include="Models\SizeGiay.cs" />
     <Compile Include="Models\TaiKhoanNguoiDung.cs" />
     <Compile Include="Models\TaiKhoanQuanTri.cs" />
     <Compile Include="Models\TinTuc.cs" />
@@ -471,16 +470,6 @@
     <Content Include="Areas\Admin\Views\DanhMucSPs\Details.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMucSPs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMucSPs\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\KhuyenMais\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\KhuyenMais\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\KhuyenMais\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\KhuyenMais\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\KhuyenMais\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\LienHes\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\LienHes\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\LienHes\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\LienHes\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\LienHes\Index.cshtml" />
     <Content Include="Areas\Admin\Views\TinTucs\Create.cshtml" />
     <Content Include="Areas\Admin\Views\TinTucs\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\TinTucs\Details.cshtml" />
@@ -496,11 +485,6 @@
     <Content Include="Areas\Admin\Views\TaiKhoanQuanTris\Details.cshtml" />
     <Content Include="Areas\Admin\Views\TaiKhoanQuanTris\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\TaiKhoanQuanTris\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\ChiTietSanPhams\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\ChiTietSanPhams\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\ChiTietSanPhams\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\ChiTietSanPhams\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\ChiTietSanPhams\Index.cshtml" />
     <Content Include="Areas\Admin\Views\HoaDons\Create.cshtml" />
     <Content Include="Areas\Admin\Views\HoaDons\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\HoaDons\Details.cshtml" />
@@ -725,6 +709,16 @@
     <Content Include="Assets\Admin\scss\_responsive.scss" />
     <Content Include="Assets\Admin\scss\_variable.scss" />
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AnhMoTas\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AnhMoTas\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AnhMoTas\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AnhMoTas\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AnhMoTas\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPhams\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPhams\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPhams\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPhams\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPhams\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_LayoutClient.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -744,6 +738,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="wwwroot\Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

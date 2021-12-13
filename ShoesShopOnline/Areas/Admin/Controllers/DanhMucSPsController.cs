@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -48,14 +49,36 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaDM,TenDanhMuc")] DanhMucSP danhMucSP)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.DanhMucSPs.Add(danhMucSP);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                if (ModelState.IsValid)
+                {
+                    //Tạo mã danh mục
+                    string madm="";
+                    var list = db.DanhMucSPs.ToList();
+                    var danhmuc=list.LastOrDefault();
+                    if (danhmuc == null)
+                    {
+                        madm = "DM01";
+                    }
+                    else
+                    {
+                        int index = int.Parse(danhmuc.MaDM.Substring(2, 2)) + 1;
+                        madm = "DM" + string.Format(CultureInfo.CreateSpecificCulture("da-DK"), "{0:00}", index);
+                    }
+                    danhMucSP.MaDM = madm;
+                    db.DanhMucSPs.Add(danhMucSP);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
 
-            return View(danhMucSP);
+                return View(danhMucSP);
+            }
+            catch(Exception ex)
+            {
+                ViewBag.Error = "Lỗi nhập dữ liệu !" + ex.Message;
+                return View(danhMucSP);
+            }
         }
 
         // GET: Admin/DanhMucSPs/Edit/5

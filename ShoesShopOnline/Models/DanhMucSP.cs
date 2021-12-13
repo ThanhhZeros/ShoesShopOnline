@@ -1,7 +1,8 @@
-namespace ShoesShopOnline.Models
+﻿namespace ShoesShopOnline.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -17,6 +18,7 @@ namespace ShoesShopOnline.Models
 
         [Key]
         [StringLength(20)]
+        [DisplayName("Mã danh mục")]
         public string MaDM { get; set; }
 
         [Required]

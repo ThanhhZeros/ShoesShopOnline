@@ -5,15 +5,13 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h3>
+    @Html.ActionLink("Thêm danh mục", "Create")
+</h3>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TenDanhMuc)
+            Tên danh mục
         </th>
         <th></th>
     </tr>
@@ -23,12 +21,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.TenDanhMuc)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaDM }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaDM }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaDM })
+        <td style="float:right">
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaDM })
         </td>
     </tr>
 }
-
 </table>
