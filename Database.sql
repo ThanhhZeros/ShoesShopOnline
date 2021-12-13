@@ -146,4 +146,9 @@ insert into TaiKhoanQuanTri(HoTenUser,TenDangNhap,MatKhau,LoaiTK,TrangThai) valu
 --insert into LienHe(MaLienHe, )
 insert into TinTuc (TenTin,MaTK,NgayDang,NoiDung) values
 (N'7 cách bảo quản giày thể thao tốt nhất',1,'2/3/2020','This is a content'),
+<<<<<<< HEAD
 (N'9 kỹ thuật làm đẹp cho u30',1,'2/3/2020','This is a content')
+=======
+(N'9 kỹ thuật làm đẹp cho u30',1,'2/3/2020','This is a content')
+
+--INSERT into ChiTietHoaDon values
