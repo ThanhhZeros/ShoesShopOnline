@@ -30,10 +30,7 @@ MoTa nvarchar(500),
 GiaBan money not null,
 )
 
-create table SizeGiay(
-KichCo int identity primary key,
-Loai nvarchar(20),
-)
+
 
 create table AnhMoTa(
 MaAnh int identity primary key,
@@ -45,7 +42,7 @@ MaSP varchar(10) foreign key references SanPham(MaSP) on delete cascade on updat
 ---------------------------------
 create table ChiTietSanPham(
 MaAnh int foreign key(MaAnh) references AnhMoTa(MaAnh) on delete cascade on update cascade,
-KichCo int foreign key(KichCo) references SizeGiay(KichCo) on delete cascade on update cascade,
+KichCo int,
 primary key(KichCo,MaAnh),
 )
 
@@ -134,8 +131,6 @@ insert into SanPham(MaSP, TenSP, MaDM, MoTa, New, GiaBan) values
 ('SP017', 'Nike air 1','DM01','This is a description','1','350000'),
 ('SP018', 'Nike air 1','DM01','This is a description','1','350000')
 
-insert into SizeGiay(Loai) values
-(35),(36),(37),(38)
 
 insert into TaiKhoanNguoiDung(DiaChi, Email, HoTen, SDT, TenDangNhap,MatKhau, TrangThai) values
 ('Ha Noi', 'NguyenA@gmail.com', N'Nguyen Van A', '098765543','NguyenA','456', '1'),
@@ -151,18 +146,8 @@ insert into TaiKhoanQuanTri(HoTenUser,TenDangNhap,MatKhau,LoaiTK,TrangThai) valu
 --insert into LienHe(MaLienHe, )
 insert into TinTuc (TenTin,MaTK,NgayDang,NoiDung) values
 (N'7 cách bảo quản giày thể thao tốt nhất',1,'2/3/2020','This is a content'),
+
+(N'9 kỹ thuật làm đẹp cho u30',1,'2/3/2020','This is a content'),
 (N'9 kỹ thuật làm đẹp cho u30',1,'2/3/2020','This is a content')
 
-
---insert into HoaDon(MaTK,HoTenNguoiNhan,SDTNguoiNhan,DiaChiNhan,EmailNguoiNhan,NgayLap,TongTien,TrangThai,GhiChu) values
---(1,N'Lan Anh',N'098764567',N'Hà Nội',N'lananh@gmail.com',CAST(N'2021-08-07T20:45:45.887' AS DateTime),200000,N'1',N'Giao sớm'),
---(1,N'Lan Anh',N'098764567',N'Hà Nội',N'lananh@gmail.com',CAST(N'2021-08-07T20:45:45.887' AS DateTime),200000,N'0',N'Giao sớm')
-
---insert into AnhMoTa values
---(N'/images/2.jpg',N'SP001')
---insert into ChiTietSanPham values
---(1,1)
-
-
 --INSERT into ChiTietHoaDon values
---(1,1,1,2)
