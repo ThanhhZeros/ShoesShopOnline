@@ -17,16 +17,13 @@ namespace ShoesShopOnline.Models
 
         [Key]
         [Column(Order = 0)]
-        [StringLength(10)]
-        public string MaAnh { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int MaAnh { get; set; }
 
         [Key]
         [Column(Order = 1)]
-        [StringLength(10)]
-        public string KichCo { get; set; }
-
-        [Column(TypeName = "money")]
-        public decimal GiaBan { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int KichCo { get; set; }
 
         public virtual AnhMoTa AnhMoTa { get; set; }
 

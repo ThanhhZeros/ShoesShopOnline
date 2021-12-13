@@ -27,19 +27,17 @@ namespace ShoesShopOnline.Models
         [StringLength(20)]
         public string MaDM { get; set; }
 
-        [StringLength(20)]
-        public string MaKhuyenMai { get; set; }
-
         public bool? New { get; set; }
 
         [StringLength(500)]
         public string MoTa { get; set; }
 
+        [Column(TypeName = "money")]
+        public decimal GiaBan { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AnhMoTa> AnhMoTas { get; set; }
 
         public virtual DanhMucSP DanhMucSP { get; set; }
-
-        public virtual KhuyenMai KhuyenMai { get; set; }
     }
 }
