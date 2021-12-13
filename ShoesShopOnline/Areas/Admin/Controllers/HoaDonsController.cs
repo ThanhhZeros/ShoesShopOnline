@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ShoesShopOnline.Models;
+using PagedList;
 
 namespace ShoesShopOnline.Areas.Admin.Controllers
 {
@@ -15,10 +16,14 @@ namespace ShoesShopOnline.Areas.Admin.Controllers
         private Shoes db = new Shoes();
 
         // GET: Admin/HoaDons
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
             var hoaDons = db.HoaDons.Include(h => h.TaiKhoanNguoiDung);
-            return View(hoaDons.ToList());
+            hoaDons = hoaDons.OrderBy(h => h.MaHD);
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+
+            return View(hoaDons.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Admin/HoaDons/Details/5
